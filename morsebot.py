@@ -1,7 +1,7 @@
-# Any editing of this file and
+# Any editing of this file without mention of owner and
 # pretending to be the creator of the file is illegal .
 #
-#Telegram: @silentAw
+# Rubika: @mahdoosh1, bot: @morserbot
 
 from morser import decode , encode
 from asyncio import run
@@ -29,4 +29,4 @@ async def main():
                 await message.reply(decoded,reply_to_message_id=mes_id)
 
         await client.run_until_disconnected()
-run(main()) # Made by silentAw
+run(main()) # Made by mahdoosh1

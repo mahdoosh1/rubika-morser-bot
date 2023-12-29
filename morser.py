@@ -22,6 +22,7 @@ e_to_m = {
 "s":"···",
 "t":"—",
 "u":"··—",
+"v":"...-",
 "w":"·——",
 "x":"—··—",
 "y":"—·——",
@@ -49,6 +50,7 @@ m_to_e = {
 "...":"s",
 "-":"t",
 "..-":"u",
+"...-":"v",
 ".--":"w",
 "-..-":"x",
 "-.--":"y",
@@ -63,7 +65,7 @@ async def decode(morse):
     morse = morse.replace("·",".")
     words = morse.split("/")
     for word in words:
-        letters = word.replace('\xa0',' ').split("  ")
+        letters = word.replace('\xa0',' ').split(" ")
         for letter in letters:
             letter2 = letter.replace(' ','')
             try:
@@ -80,10 +82,10 @@ async def encode(text):
     for word in words:
         for letter in word:
             try:
-                out = out + e_to_m[letter] + "   "
+                out = out + e_to_m[letter] + " "
             except:
-                out = out + "?  "
-        out = out[:len(out)-3] + "/"
+                out = out + "? "
+        out = out[:len(out)-1] + "/"
     return out[:len(out)-1]
 
 if __name__ == "__main__":
